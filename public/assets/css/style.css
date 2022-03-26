@@ -1,0 +1,726 @@
+* {
+    font-family: "gothamlight";
+}
+
+body {
+    color: #5B5B5B;
+    font-size: 14px;
+}
+
+.bg-body {
+    background: url(../images/banner/0.png) no-repeat top center;
+}
+
+.bg-green {
+    background: #52cf89 !important;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-red {
+    color: #e31e24;
+}
+
+h1.title {
+    font-size: 55px;
+    font-family: 'gothambold';
+    color: #333;
+}
+
+.btn-icon i {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.box .btn.btn-progress {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px 0 0;
+    width: 100%;
+    align-items: center;
+    cursor: default;
+}
+
+.box .btn.btn-progress span {
+    padding: 5px;
+    font-family: 'gothambold';
+    font-size: 22px;
+    min-width: 35px;
+    display: block;
+}
+
+.box .btn.btn-progress.btn-pink {
+    background: #E87866;
+    color: white;
+}
+
+.box .btn.btn-progress.btn-pink:hover {
+    background: #d36d5d;
+}
+
+.box .btn.btn-progress.btn-pink span {
+    background: #F2927D;
+}
+
+.box .btn.btn-progress.btn-danger span {
+    background: #e51a4b;
+}
+
+.box .btn.btn-progress.btn-info span {
+    background: #52cf89;
+}
+
+.box .btn.btn-progress img {
+    width: 35px;
+}
+
+.bigger {
+    font-size: 130%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.font-weight-bold {
+    font-family: 'gothambold';
+}
+
+.c-default {
+    cursor: default;
+}
+
+.progress {
+    height: .5rem;
+    width: 80px;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+@media screen and (max-width: 767px) {}
+
+.top-bar {
+    background: #1d1d1d;
+    padding: 5px 30px;
+}
+
+.top-bar p {
+    color: #5b5b5b;
+    margin: 0;
+    cursor: default;
+}
+
+.top-bar .redes a {
+    color: #5b5b5b;
+    font-size: 26px;
+    margin-left: 5px;
+}
+
+.navbar {
+    border-bottom: 1px solid #dedede;
+    background: white;
+}
+
+nav .navbar-brand img {
+    height: 60px;
+}
+
+nav .navbar-collapse {
+    margin-left: auto;
+    flex-grow: initial;
+}
+
+nav .navbar-collapse a {
+    color: #898989;
+    position: relative;
+}
+
+nav .navbar-collapse a .total {
+    color: #fff;
+    position: absolute;
+    z-index: 10;
+    border-radius: 15px;
+    height: 15px;
+    width: 15px;
+    background: #225fac;
+    font-size: 8px;
+    line-height: 15px;
+    text-align: center;
+    font-family: 'gothambold';
+    top: -5px;
+    left: 25px;
+}
+
+nav .navbar-collapse a i {
+    font-size: 22px;
+    margin: 0 10px;
+}
+
+nav .user {
+    margin-right: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .user img {
+    width: 45px;
+}
+
+@media screen and (max-width: 768px) {
+    nav .user {
+        margin-right: 10px;
+    }
+    nav .user .name {
+        display: none;
+    }
+    nav .navbar-collapse {
+        margin: 10px 0 0;
+    }
+}
+
+nav button.clear {
+    background: none;
+    border: none;
+}
+
+.fixed-scroll-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .fixed-scroll-mobile {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        color: white;
+        cursor: pointer;
+        padding: 0;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 0 5px #999;
+    }
+    .fixed-scroll-mobile i {
+        color: #111;
+    }
+}
+
+
+/* The side navigation menu */
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 999;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.login {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../images/banner/login.png) no-repeat center;
+}
+
+.login .logo {
+    width: 296px;
+    margin: 70px auto;
+    display: block;
+}
+
+.login form {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #ccc;
+    padding: 20px 40px;
+    margin-bottom: 70px;
+}
+
+.login form label {
+    display: block;
+    margin: 14px 0;
+}
+
+.login form input[type=text] {
+    background: #eff3f6;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    width: 100%;
+}
+
+.login form input[type=password] {
+    background: #e0e7ee;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    width: 100%;
+}
+
+.login form input[type=checkbox] {
+    background: #eff3f6;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.login form button {
+    background: #225fac;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    width: 100%;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.conteudo .bg-blue {
+    background: #e9f0f5;
+    padding: 20px;
+}
+
+.conteudo .box {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.conteudo .box button {
+    display: block;
+    margin: 5px auto;
+    font-family: 'gothambold';
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.table, .tbl-fornecedores {
+    width: 100%;
+}
+
+.table, .tbl-fornecedores .progress {
+    margin: auto;
+}
+
+.table tr th, .table tr td {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px dashed #dcd7e6;
+}
+
+.tbl-fornecedores tr th {
+    background: #E5E5E5;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    padding: 10px;
+}
+
+.tbl-fornecedores tr:first-child th:last-child {
+    background: #d9dada;
+}
+
+.tbl-fornecedores tr:first-child+tr th {
+    background: #ebecec;
+}
+
+.tbl-fornecedores tr td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.tbl-fornecedores tr:nth-child(2n) td {
+    background: #f5f5f5;
+}
+
+.tbl-fornecedores tr td:first-child {
+    color: #2a98f6;
+}
+
+.tbl-fornecedores tr:first-child th:first-child {
+    background: #2A98F6;
+    color: white;
+}
+
+.anexos {
+    display: flex;
+    justify-content: space-around;
+    overflow: auto;
+}
+
+.anexos a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: inherit;
+    font-weight: bold;
+    max-width: 110px;
+    min-width: 110px;
+    margin: 0 20px;
+}
+
+.anexos a small {
+    display: block;
+    color: #b2b3b3;
+    margin: 5px 0;
+}
+
+.anexos img {
+    max-height: 110px;
+    display: block;
+    margin: auto;
+}
+
+.conteudo .box .main-pic {
+    display: block;
+    margin: auto;
+}
+
+.conteudo .box-atingimento {
+    text-align: center;
+}
+
+.conteudo .box-atingimento a {
+    color: #a8e8c3;
+}
+
+.conteudo .box-atingimento big {
+    font-size: 80px;
+    font-family: 'gothambold';
+}
+
+section.news {
+    background: linear-gradient(0deg, #FFF 50%, #5b5b5b 50%);
+}
+
+.news {
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.news h2 {
+    font-family: 'gothambold';
+}
+
+.news a {
+    text-decoration: none;
+}
+
+.news .item {
+    padding: 1px;
+}
+
+.news .item .image, .article .image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.image:hover img {
+    display: block;
+    position: relative;
+    transform: scale(1.2);
+    transition: .2s all ease-in-out;
+}
+
+.news .item .image img, .article .image img {
+    display: block;
+    width: 100%;
+    transition: .2s all ease-in-out;
+}
+
+.news .item .image .date, .article .image .date {
+    position: absolute;
+    z-index: 9;
+    width: auto;
+    background: #225fac;
+    padding: 5px;
+    color: white;
+    left: 0;
+    top: 35px;
+    font-size: 16px;
+}
+
+.news .item .image .date b, .article .image .date b {
+    font-size: 22px;
+    font-family: 'gothambold';
+}
+
+.news .item .text {
+    color: #2b2a29;
+    text-align: left;
+    display: block;
+    border: 1px solid #E6E6E6;
+    padding: 20px;
+}
+
+.news .item .link {
+    color: #c5c6c6;
+    text-align: right;
+    display: block;
+}
+
+article h1.title {
+    font-size: 40px;
+}
+
+article h2.title {
+    font-size: 30px;
+    font-family: 'gothambold';
+}
+
+article .date {
+    color: #c5c6c6;
+}
+
+article .search-form .input-group {
+    background: black;
+    border-radius: 50px;
+}
+
+article .search-form .form-control {
+    background: transparent;
+    border-radius: 50px 0 0 50px;
+    font-family: 'gothambold';
+    padding-left: 20px;
+    border: none;
+}
+
+article .search-form .btn {
+    border-radius: 0 50px 50px 0;
+    border: none;
+}
+
+article .search-form .btn:hover {
+    background: transparent;
+}
+
+article .categories {
+    margin-top: 60px;
+    display: block;
+}
+
+article .categories, article .categories li {
+    padding: 10px 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+article .categories li:first-child {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+article .categories li {
+    border-bottom: 1px solid #b2b3b3;
+}
+
+article .categories a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contato {
+    color: none;
+}
+
+.contato h3 {
+    color: #a2d9f7;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 40px 0;
+    position: relative;
+}
+
+.contato h3:after {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background: #a2d9f7;
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+
+.contato form input {
+    margin-bottom: 20px;
+}
+
+.contato form textarea {
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.contato form button {
+    width: 100%;
+    height: 50px;
+    background: #a2d9f7;
+}
+
+footer {
+    background: #1d1d1d;
+    padding: 30px 0;
+}
+
+footer .brand {
+    max-width: 300px;
+}
+
+footer .redes {
+    margin-top: 20px;
+    display: flex;
+}
+
+footer .redes a {
+    color: white;
+    font-size: 32px;
+    margin: 0 10px 0 0;
+}
+
+footer ul, footer li {
+    color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+footer ul {
+    padding: 0 0 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+    footer ul {
+        padding: 0 0 30px;
+    }
+}
+
+footer ul:first-child {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+footer ul li:first-child {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer ul li a, footer ul li a:hover {
+    color: white;
+}
+
+.copy {
+    background: #262626;
+    padding: 20px 0;
+}
+
+.copy p {
+    font-size: 12px;
+    margin: 0;
+    cursor: default;
+    color: white;
+}
+
+.copy a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.copy img {
+    height: 20px;
+}
+
+.novocontato {
+    font-size:15px;
+    font-weight:700;
+    text-transform:uppercase;
+    color: #225fac;
+    padding:10px 0 10px 0;
+    border-bottom: 2px #225fac solid;
+    cursor: pointer;
+}
+
+.removecontato {
+    font-size:15px;
+    font-weight:700;
+    text-transform:uppercase;
+    color: #225fac;
+    cursor: pointer;
+}

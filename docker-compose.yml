@@ -1,0 +1,70 @@
+version: '3.5'
+
+services:
+  nginx:
+    image: nginx:1.19-alpine
+    container_name: servimed-form-nginx
+    ports:
+      - ${WEB_PORT}:80
+    volumes:
+      - phpmyadmin:/usr/share/phpmyadmin
+      - '.:/var/www/html'
+      - './.docker/nginx/nginx.conf:/etc/nginx/nginx.docker.conf'
+      - './storage/logs:/var/log/nginx'
+    env_file:
+      - '.env'
+    depends_on:
+      - php
+      - phpmyadmin
+    restart: unless-stopped
+    command: /bin/sh -c "cat /etc/nginx/nginx.docker.conf > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+  php:
+    image: kaisari/php:8.0-mssql-fpm-alpine
+    container_name: servimed-form-php
+    volumes:
+      - '.:/var/www/html'
+      - './.docker/php/php.ini:/usr/local/etc/php/php.ini'
+      - './.docker/php/php-debug.ini:/usr/local/etc/php/conf.d/php-docker.ini'
+      - ~/.composer:/root/.composer
+      - ~/.ssh:/root/.ssh
+    environment:
+      PHP_IDE_CONFIG: "serverName=php"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    command: /bin/sh -c "XDEBUG_MODE=off composer install --no-scripts &&
+      docker-php-ext-enable xdebug &&
+      php-fpm"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  mysql:
+    image: mysql/mysql-server:8.0
+    container_name: servimed-form-mysql
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - '.database:/.database'
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_HOST: '%'
+    env_file:
+      - '.env'
+    restart: unless-stopped
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:fpm
+    container_name: servimed-form-phpmyadmin
+    environment:
+      PMA_ARBITRARY: 0
+      PMA_HOST: ${DB_HOST}
+      PMA_PORT: ${DB_PORT}
+      UPLOAD_LIMIT: 100M
+    volumes:
+      - phpmyadmin:/var/www/html
+      - phpmyadmin:/usr/share/phpmyadmin
+    depends_on:
+      - db
+    restart: unless-stopped
+volumes:
+  data: { }
+  phpmyadmin:
