@@ -45,14 +45,14 @@
                                         <div class="col-lg-12 col-sm-12 text-center text-sm-left">
                                             <h4 class="font-weight-bold text-left my-4">Dados Cadastrais</h4>
                                             <p>
-                                                <strong>CÓDIGO DO CLIENTE:</strong> 0000<br />
-                                                <strong>RAZÃO SOCIAL:</strong> NOME DA EMPRESA LTDA<br />
-                                                <strong>CNPJ:</strong> 00.000.000/0001-00<br />
-                                                <strong>ENDEREÇO:</strong> RUA NOME SOBRENOME, 100<br />
-                                                <strong>BAIRRO:</strong> NOME DO BAIRRO<br />
-                                                <strong>CIDADE:</strong> NOME DA CIDADE<br />
-                                                <strong>ESTADO:</strong> UF<br />
-                                                <strong>CEP:</strong> 00000-000
+                                                <strong>CÓDIGO DO CLIENTE:</strong> {{$cliente->id}}<br />
+                                                <strong>RAZÃO SOCIAL:</strong> {{$cliente->razao_social}}<br />
+                                                <strong>CNPJ:</strong> {{\Clemdesign\PhpMask\Mask::apply($cliente->cnpj, '00.000.000/0000-00')}}<br />
+                                                <strong>ENDEREÇO:</strong> {{$cliente->logradouro}}<br />
+                                                <strong>BAIRRO:</strong> {{$cliente->bairro}}<br />
+                                                <strong>CIDADE:</strong> {{$cliente->cidade}}<br />
+                                                <strong>ESTADO:</strong> {{$cliente->uf}}<br />
+                                                <strong>CEP:</strong> {{$cliente->cep}}
                                             </p>
                                         </div>
                                     </div>
