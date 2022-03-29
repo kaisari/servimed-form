@@ -45,22 +45,28 @@ class FormularioController extends Controller
             $validator = Validator::make($request->all(), [
                 'nome' => 'required|array',
                 'email' => 'required|array',
+                'email_confirmacao' => 'required|array',
+                'telefone' => 'required|array',
                 'cargo' => 'required|array',
                 'nome.*' => 'required',
-                'email.*' => 'required|email',
+                'email.*' => 'required|email:rfc,dns',
+                'email_confirmacao.*' => 'required|same:email.*',
+                'telefone.*' => 'required',
                 'cargo.*' => 'required',
-                'aceite' => 'accepted',
             ]);
             if ($validator->fails()) {
-                alert()->error('Por favor verifique o formulário', implode('<br>', $validator->messages()->all()));
+                alert()->error('Por favor verifique o formulário', implode("<br>", $validator->messages()->all()))->toHtml();
             } else {
                 foreach ($request->input('nome') as $key => $value) {
                     Contato::create([
                         'nome' => $value,
-                        'email' => $request->input('email')[$key],
-                        'telefone' => $request->input('telefone')[$key],
-                        'whatsapp' => $request->input('whatsapp')[$key],
-                        'cargo' => $request->input('cargo')[$key],
+                        'email' => $request->input("email.$key"),
+                        'telefone' => $request->input("telefone.{$key}"),
+                        'whatsapp' => $request->input("whatsapp.{$key}"),
+                        'cargo' => $request->input("cargo.{$key}"),
+                        'contato_sms' => !!$request->input("contato_sms.{$key}"),
+                        'contato_whatsapp' => !!$request->input("contato_whatsapp.{$key}"),
+                        'contato_email' => !!$request->input("contato_email.{$key}"),
                         'cliente_id' => $cliente->id,
                     ]);
                 }

@@ -33,7 +33,17 @@ $(document).ready(function(){
                 $($('[name="telefone[]"]')[i]).val(old?.telefone[i]);
                 $($('[name="whatsapp[]"]')[i]).val(old?.whatsapp[i]);
                 $($('[name="email[]"]')[i]).val(old?.email[i]);
+                $($('[name="email_confirmacao[]"]')[i]).val(old?.email_confirmacao[i]);
                 $($('[name="cargo[]"]')[i]).val(old?.cargo[i]);
+                if (old?.contato_sms) {
+                    $($('[name="contato_sms[]"]')[i]).val(old?.contato_sms[i] ?? 0);
+                }
+                if (old?.contato_email) {
+                    $($('[name="contato_email[]"]')[i]).val(old?.contato_email[i] ?? 0);
+                }
+                if (old?.contato_whatsapp) {
+                    $($('[name="contato_whatsapp[]"]')[i]).val(old?.contato_whatsapp[i] ?? 0);
+                }
             }
         } else {
             addContato();

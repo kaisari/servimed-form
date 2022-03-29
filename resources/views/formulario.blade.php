@@ -71,10 +71,6 @@
                                         <div class="novocontato" id="novocontato">+ Adcionar mais um contato (Opicional)</div>
 
                                         <div style="margin-top:30px;" class="col-md-12">
-
-                                            <input type="checkbox" name="aceite" />
-                                            <label> Texto aqui.</label>
-
                                             <button type="submit" class="btn btn-primary">ENVIAR</button>
                                         </div>
                                     </form>
@@ -85,17 +81,20 @@
                                                 Contato Adicional <span class="removecontato"> - Remover</span>
                                             </h4>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <input type="text" name="nome[]" placeholder="Nome" class="form-control" required />
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="telefone[]" placeholder="Telefone" class="form-control telefone" />
+                                            <input type="text" name="telefone[]" placeholder="Telefone" class="form-control telefone" required />
                                         </div>
                                         <div class="col-md-6">
                                             <input type="text" name="whatsapp[]" placeholder="WhatsApp" class="form-control telefone" />
                                         </div>
                                         <div class="col-md-6">
                                             <input type="email" name="email[]" placeholder="E-mail" class="form-control" required />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="email" name="email_confirmacao[]" placeholder="Confirme o E-mail" class="form-control" required />
                                         </div>
                                         <div class="col-md-12">
                                             <select name="cargo[]" class="form-control" required>
@@ -105,6 +104,23 @@
                                                 <option value="Comprador de Higiene e Beleza">Comprador de Higiene e Beleza</option>
                                                 <option value="Comprador">Comprador</option>
                                             </select>
+                                        </div>
+
+                                        <div class="col-md-12 pt-2">
+                                            Não perca nenhuma campanha!<br>
+                                            Para receber promoções e ofertas da Servimed, selecione o melhor canal para nosso contato:
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="contato_sms[]" id="contato_sms">
+                                                <label class="form-check-label" for="contato_sms">SMS</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="contato_whatsapp[]" id="contato_whatsapp">
+                                                <label class="form-check-label" for="contato_whatsapp">WhatsApp</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="contato_email[]" id="contato_email">
+                                                <label class="form-check-label" for="contato_email">E-mail</label>
+                                            </div>
                                         </div>
                                     </div>
 

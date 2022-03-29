@@ -36,5 +36,5 @@ use Illuminate\Support\Carbon;
 class Contato extends Model
 {
     protected $table = 'contatos';
-    protected $fillable = ['cliente_id', 'nome', 'telefone', 'whatsapp', 'email', 'cargo'];
+    protected $fillable = ['cliente_id', 'nome', 'telefone', 'whatsapp', 'email', 'cargo', 'contato_sms', 'contato_email', 'contato_whatsapp'];
 }
