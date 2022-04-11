@@ -18,11 +18,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/formulario', function () {
-    return redirect('/');
-});
 Route::get('/formulario/store', function () {
     return redirect('/');
 });
 
-Route::post('/formulario', FormularioController::class)->name('formulario');
+Route::any('/formulario', FormularioController::class)->name('formulario');

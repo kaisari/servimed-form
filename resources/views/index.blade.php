@@ -14,11 +14,11 @@
 
                         <label for="">
                             CÓDIGO DO CLIENTE
-                            <input type="text" name="cod_cliente" id="">
+                            <input type="text" name="cod_cliente" id="" value="{{old('cod_cliente')}}">
                         </label>
                         <label for="">
                             CNPJ
-                            <input type="text" name="cnpj" id="" class="cnpj">
+                            <input type="text" name="cnpj" id="" class="cnpj" value="{{old('cnpj')}}">
                         </label>
 
                         <button class="primary" type="submit">entrar</button>

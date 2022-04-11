@@ -20,8 +20,8 @@ class FormularioController extends Controller
     public function __invoke(Request $request): Response | RedirectResponse
     {
         $validator = Validator::make($request->all(), [
-            'cnpj' => 'required_without:cod_cliente',
-            'cod_cliente' => 'required_without:cnpj',
+            'cnpj' => 'required',
+            'cod_cliente' => 'required',
         ]);
         $validator->setAttributeNames([
             'cnpj' => 'CNPJ',
@@ -29,15 +29,15 @@ class FormularioController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return back()->with('errors', $validator->messages()->all()[0]);
+            return redirect('/')->with('errors', $validator->messages()->all()[0])->withInput($request->all());
         }
 
         $cliente = Cliente::where('cnpj', preg_replace("/[^0-9]/", "", $request->input('cnpj')))
-            ->orwhere('id', $request->input('cod_cliente'))
+            ->where('id', $request->input('cod_cliente'))
             ->first();
 
         if (!$cliente) {
-            return back()->with('errors', 'Cadastro não localizado');
+            return redirect('/')->with('errors', 'Cadastro não localizado')->withInput($request->all());
         }
 
         $success = false;
