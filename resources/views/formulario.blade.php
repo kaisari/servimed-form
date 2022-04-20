@@ -69,7 +69,7 @@
                                         <input type="hidden" name="cod_cliente" value="{{ $cliente->id }}">
                                         <input type="hidden" name="cnpj" value="{{ $cliente->cnpj }}">
                                         <input type="hidden" name="contato" value="1">
-                                        <div class="novocontato" id="novocontato">+ Adcionar mais um contato (Opicional)</div>
+                                        <div class="novocontato" id="novocontato">+ Adicionar mais um contato (Opcional)</div>
 
                                         <div style="margin-top:30px;" class="col-md-12">
                                             <button type="submit" class="btn btn-primary">ENVIAR</button>
